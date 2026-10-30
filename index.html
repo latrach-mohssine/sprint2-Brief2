@@ -1,13 +1,114 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./output.css" />
+    <title>E-Card</title>
   </head>
-  <body>
-    <h1>hello</h1>
-    <p>hi</p>
-    <i>good game gg</i>
+  <body class="bg-[#F6F0E3] text-[#24201E] font-sans min-h-screen">
+    <!-- ----------------------------------------------- header ----------------------------------------------- -->
+
+    <header
+      class="p-4 border-[#e7d8bd] flex items-center justify-between gap-3 h-14 mb-2"
+    >
+      <div class="flex items-center gap-2 shrink-0">
+        <img src="./images/avatars/logoECard.png" alt="logoECard" width="50" />
+        <span class="text-3xl font-bold"> E-CARD </span>
+      </div>
+
+      <div class="flex items-center justify-between text-3xl gap-2 shrink-0">
+        <span
+          class="flex justify-center items-center text-xl font-bold text-[#F6F0E3] rounded-full w-9 h-9 bg-[#751f16]"
+        >
+          M
+        </span>
+        <span class="font-bold text-sm truncate">Mohssine_01</span>
+      </div>
+    </header>
+    <!-- --------------------------------------------NAV BAR--------------------------------------------- -->
+    <nav class="flex justify-center p mx-auto mb-2">
+      <ul class="flex justify-between h-9">
+        <li
+          class="flex justify-center items-center border-2 rounded-l-lg w-28 font-bold border-[#751f16] bg-[#751f16] text-white"
+        >
+          <a href="">Joueurs</a>
+        </li>
+        <li
+          class="flex justify-center items-center border-y-2 w-24 border-[#E7D8BD] font-bold bg-white"
+        >
+          <a href="">Jouer</a>
+        </li>
+        <li
+          class="flex justify-center items-center border-2 rounded-r-lg w-28 border-[#E7D8BD] font-bold bg-white"
+        >
+          <a href="">Historique</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="mx-9">
+        <h1 class="text-2xl font-bold">Les joueurs</h1>
+        <p class="text-sm font-semibold text-[#757573]">
+          Chooisis ton profil pour commencer.
+        </p>
+      </div>
+      <div class="bg-white my-2 mx-7 rounded-lg p-3 border-2 border-[#E7D8BD]"  >
+        <h2 class="font-bold text-xl pb-1">Nouveau joueur</h2>
+        <label for="nickname">
+          <p class="font-bold text-sm pb-1">Pseudo</p>
+
+          <input
+            type="text"
+            name="nickname"
+            id="nickname"
+            class="bg-white border border-[#757573] rounded-md pb-1 pl-2 font-semibold w-full"
+            placeholder="Ex. Yanis_07"
+            required
+            minlength="3"
+            maxlength="15"
+            pattern="[A-Za-z0-9_]{3,15}"
+          />
+        </label>
+        <p class="text-xs pb-2">3 à 15 caractères: lettres, chiffres et _</p>
+        <h3 class="font-semibold mb-3">Avatar</h3>
+
+        <div class="mb-3">
+          <div class="flex gap-4 max-w-80 flex-wrap">
+            <img src="./images/avatars/Baku_Madarame.png" alt="Baku_Madarame" width="64" class="border-4 rounded-full border-[#751f16] p-0.5"/>
+            <img src="./images/avatars/Hisoka_Morow.png" alt="Hisoka_Morow" width="60" />
+            <img src="./images/avatars/Kaiji_Ito.png" alt="Kaiji_Ito" width="60" />
+            <img src="./images/avatars/Kiyotaka_Ayanokoji.png" alt="Kiyotaka_Ayanokoji" width="60"/>
+            <img src="./images/avatars/Shinichi_Akiyama.png" alt="Shinichi_Akiyama" width="60"/>
+            <img src="./images/avatars/Roronoa_Zoro.png" alt="Roronoa_Zoro" width="60" />
+            <img src="./images/avatars/Sora.png" alt="Sora" width="60" />
+            <img src="./images/avatars/Yumeko_Jabami.png" alt="Yumeko_Jabami" width="60" />
+          </div>
+        </div>
+
+        <div>
+          <button
+            class="text-white font-bold bg-[#751f16] w-72 h-10 rounded-lg"
+          >
+            Ajouter
+          </button>
+        </div>
+      </div>
+      <div class="bg-white my-2 mx-7 rounded-lg p-3 border-2 border-[#E7D8BD]  " >
+        <div class="flex gap-4 items-center">
+        <div>
+          <img src="/images/avatars/Baku_Madarame.png" alt="Baku_Madarame" width="60">
+        </div >
+        <div>
+        <p class="font-bold text-lg">Yanis_07</p>
+        <p class="text-sm">0 partie</p>
+     </div> </div>
+    <div >
+      <p class="relative -top-[50px] -right-[215px] bg-amber-400 w-20 h-5 flex items-center justify-center rounded-sm text-xs ">Sélectionné</p>
+
+   </div> </div>
+
+    </main>
   </body>
 </html>
