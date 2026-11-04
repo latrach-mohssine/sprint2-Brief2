@@ -90,6 +90,7 @@ export function createInitialState() {
   };
 }
 export function playDuel(state, playerCardId) {
+    if(state.roundOver){return state}
   let playerCard;
   for (const card of state.playerHand) {
     if (card.id === playerCardId) {
@@ -128,6 +129,7 @@ export function playDuel(state, playerCardId) {
   const point = getPoints(winnerCamp);
   return {
     ...state,
+    duelNumber: state.duelNumber+1,
     playerHand: newPlayerHand,
     computerHand: newComputerHand,
     playerScore:
@@ -154,7 +156,6 @@ export function startNextRound(state){
     return  {
         ...state,
         roundNumber: nextRoundNumber,
-        duelNumber: 1,
         playerHand: playerHand,
         computerHand: computerHand,
         roundOver: false,
