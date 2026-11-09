@@ -28,34 +28,32 @@
         <div
           class="flex items-center justify-between text-3xl md:text-5xl md:gap-4 gap-2 shrink-0"
         >
-          <span
+          <span id="activePlayerInitial"
             class="flex justify-center items-center text-xl md:text-3xl font-bold text-[#F6F0E3] rounded-full w-9 h-9 md:w-14 md:h-14 bg-[#751f16]"
           >
             M
           </span>
-          <span class="font-bold text-sm md:text-xl truncate">Mohssine_01</span>
+          <span id="activePlayerName" class="font-bold text-sm md:text-xl truncate">Mohssine_01</span>
         </div>
       </header>
       <!-- --------------------------------------------NAV BAR--------------------------------------------- -->
-      <nav class="flex justify-center mx-auto mb-2">
-        <ul class="flex justify-between h-9 md:h-14">
-          <li
-            class="flex justify-center items-center border-2 rounded-l-lg md:border-4 md:text-2xl md:rounded-l-xl w-28 md:w-60 font-bold border-[#751f16] bg-[#751f16] text-white"
-          >
-            <a href="">Joueurs</a>
-          </li>
-          <li
-            class="flex justify-center items-center border-y-2 w-24 md:w-56 md:text-2xl border-[#E7D8BD] font-bold bg-white"
-          >
-            <a href="">Jouer</a>
-          </li>
-          <li
-            class="flex justify-center items-center border-2 rounded-r-lg md:text-2xl w-28 md:rounded-r-xl md:w-60 border-[#E7D8BD] font-bold bg-white"
-          >
-            <a href="">Historique</a>
-          </li>
-        </ul>
-      </nav>
+     
+       <nav class="flex justify-center mx-auto mb-3 px-4 w-full">
+            <ul class="flex justify-between h-8 md:h-14 w-full max-w-5xl">
+                <li  class="flex justify-center items-center border-2 rounded-l-lg md:border-4  md:rounded-l-xl  w-32 md:flex-1 md:text-2xl border-[#751f16] font-bold bg-[#751f16] text-white">
+                  
+                    <a class="flex justify-center items-center w-full h-full" href="./index.html">Joueurs</a>
+                </li>
+                <li   class="flex justify-center items-center border-y-2 md:border-y-4 md:text-2xl  w-28 md:flex-1 font-bold border-[#e7d8bd] bg-white">
+                   
+                    <a class="flex justify-center items-center w-full h-full" href="./game.html" aria-current="page">Jouer</a>
+                </li>
+                <li
+                    class="flex justify-center items-center border-2 rounded-r-lg md:border-4 md:flex-1 md:text-2xl w-28 md:rounded-r-xl border-[#E7D8BD] font-bold bg-white">
+                    <a class="flex justify-center items-center w-full h-full" href="./history.html">Historique</a>
+                </li>
+            </ul>
+        </nav>
 
       <main class="mb-5 flex-1">
         <div class="mx-9">
@@ -77,12 +75,13 @@
               type="text"
               name="nickname"
               id="nickname"
-              class="bg-white border border-[#757573] rounded-md pb-1 pl-2 font-semibold w-full md:w-72 md:h-10 text-xl"
+              class="bg-white border border-[#E7D8BD] rounded-md pb-1 pl-2 font-semibold w-full md:w-72 md:h-10 text-xl"
               placeholder="Ex. Yanis_07"
               required
               minlength="3"
               maxlength="15"
               pattern="[A-Za-z0-9_]{3,15}"
+              
             />
 
             <p class="text-xs md:text-[16px] pb-2">
@@ -207,7 +206,7 @@
             </div>
           </div>
         </form>
-        <div class="flex md:justify-between mx-7 gap-3 md:flex-row flex-col">
+        <div id="playersContainer" class="flex md:justify-between mx-7 gap-3 md:flex-row flex-col">
           <div class="bg-white rounded-lg p-3 border-2 border-[#E7D8BD] flex-1">
             <div class="flex justify-between items-center">
               <div class="flex gap-4 items-center justify-between">
@@ -244,7 +243,7 @@
               </div>
             </div>
           </div>
-          <div class="bg-white rounded-lg p-3 border-2 border-[#E7D8BD] flex-1">
+          <div  class="bg-white rounded-lg p-3 border-2 border-[#E7D8BD] flex-1">
             <div class="flex justify-between items-center">
               <div class="flex gap-4 items-center">
                 <div>
@@ -313,7 +312,7 @@
       class="flex mx-auto md:text-xl r gap-1 text-xs mb-2 font-light text-[#757573]"
     >
       <p>Projet scolaire</p>
-      <p class="">.</p>
+      <p >·</p>
       <p>Brief 2</p>
     </footer>
 
