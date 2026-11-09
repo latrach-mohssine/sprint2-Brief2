@@ -1,13 +1,321 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./output.css" />
+    <title>E-Card</title>
   </head>
-  <body>
-    <h1>hello</h1>
-    <p>hi</p>
-    <i>good game gg</i>
+
+  <body
+    class="bg-[#F6F0E3] text-[#24201E] font-sans min-h-screen flex flex-col"
+  >
+    <!-- ----------------------------------------------- header ----------------------------------------------- -->
+    <div class="flex flex-col flex-1">
+      <header
+        class="p-4 md:p-6 border-[#e7d8bd] flex items-center justify-between gap-3 h-14 mb-2 md:gap-5 md:h-24"
+      >
+        <div class="flex items-center gap-2 md:gap-4 shrink-0">
+          <img
+            src="./images/avatars/logoECard.png"
+            alt="logoECard"
+            width="50"
+            class="md:w-[70px]"
+          />
+          <span class="text-3xl font-bold md:text-5xl"> E-CARD </span>
+        </div>
+
+        <div
+          class="flex items-center justify-between text-3xl md:text-5xl md:gap-4 gap-2 shrink-0"
+        >
+          <span id="activePlayerInitial"
+            class="flex justify-center items-center text-xl md:text-3xl font-bold text-[#F6F0E3] rounded-full w-9 h-9 md:w-14 md:h-14 bg-[#751f16]"
+          >
+            M
+          </span>
+          <span id="activePlayerName" class="font-bold text-sm md:text-xl truncate">Mohssine_01</span>
+        </div>
+      </header>
+      <!-- --------------------------------------------NAV BAR--------------------------------------------- -->
+     
+       <nav class="flex justify-center mx-auto mb-3 px-4 w-full">
+            <ul class="flex justify-between h-8 md:h-14 w-full max-w-5xl">
+                <li  class="flex justify-center items-center border-2 rounded-l-lg md:border-4  md:rounded-l-xl  w-32 md:flex-1 md:text-2xl border-[#751f16] font-bold bg-[#751f16] text-white">
+                  
+                    <a class="flex justify-center items-center w-full h-full" href="./index.html">Joueurs</a>
+                </li>
+                <li   class="flex justify-center items-center border-y-2 md:border-y-4 md:text-2xl  w-28 md:flex-1 font-bold border-[#e7d8bd] bg-white">
+                   
+                    <a class="flex justify-center items-center w-full h-full" href="./game.html" aria-current="page">Jouer</a>
+                </li>
+                <li
+                    class="flex justify-center items-center border-2 rounded-r-lg md:border-4 md:flex-1 md:text-2xl w-28 md:rounded-r-xl border-[#E7D8BD] font-bold bg-white">
+                    <a class="flex justify-center items-center w-full h-full" href="./history.html">Historique</a>
+                </li>
+            </ul>
+        </nav>
+
+      <main class="mb-5 flex-1">
+        <div class="mx-9">
+          <h1 class="text-2xl md:text-5xl font-bold md:mb-2">Les joueurs</h1>
+          <p class="text-sm md:text-xl font-semibold text-[#757573]">
+            Choisis ton profil pour commencer.
+          </p>
+        </div>
+        <form
+          class="bg-white my-3 mx-7 rounded-lg p-3 border-2 border-[#E7D8BD] lg:flex lg:justify-between"
+          id="playerForm"
+        >
+          <div>
+            <h2 class="font-bold text-xl md:text-3xl pb-1">Nouveau joueur</h2>
+            <label for="nickname">
+              <span class="font-bold text-sm md:text-xl pb-1">Pseudo</span>
+            </label>
+            <input
+              type="text"
+              name="nickname"
+              id="nickname"
+              class="bg-white border border-[#E7D8BD] rounded-md pb-1 pl-2 font-semibold w-full md:w-72 md:h-10 text-xl"
+              placeholder="Ex. Yanis_07"
+              required
+              minlength="3"
+              maxlength="15"
+              pattern="[A-Za-z0-9_]{3,15}"
+              
+            />
+
+            <p class="text-xs md:text-[16px] pb-2">
+              3 à 15 caractères: lettres, chiffres et _
+            </p>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-3 md:text-xl text-center">Avatar</h3>
+
+            <div class="mb-3">
+              <div
+                class="flex gap-4 flex-nowrap overflow-x-auto md:justify-center"
+              >
+                <button
+                  type="button"
+                  class="avatar-option border-4 rounded-full p-0.5 shrink-0  rounded-b-full border-[#751f16]"
+                  data-avatar="Baku_Madarame"
+                >
+                  <img
+                    src="./images/avatars/Baku_Madarame.png"
+                    alt="Baku_Madarame"
+                    width="60"
+                    class=" shrink-0"
+                  />
+                </button>
+                <button
+                  type="button"
+                  class="avatar-option border-4 rounded-full p-0.5 shrink-0  rounded-b-full border-[#E7D8BD]"
+                  data-avatar="Hisoka_Morow"
+                >
+                  <img
+                    src="./images/avatars/Hisoka_Morow.png"
+                    alt="Hisoka_Morow"
+                    width="60"
+                    class="shrink-0"
+                  />
+                </button>
+                <button
+                  type="button"
+                  class="avatar-option border-4 rounded-full p-0.5 shrink-0  rounded-b-full border-[#E7D8BD]"
+                  data-avatar="Kaiji_Ito"
+                >
+                  <img
+                    src="./images/avatars/Kaiji_Ito.png"
+                    alt="Kaiji_Ito"
+                    width="60"
+                    class="shrink-0"
+                  />
+                </button>
+                <button
+                  type="button"
+                  class="avatar-option border-4 rounded-full p-0.5 shrink-0  rounded-b-full border-[#E7D8BD]"
+                  data-avatar="Kiyotaka_Ayanokoji"
+                >
+                  <img
+                    src="./images/avatars/Kiyotaka_Ayanokoji.png"
+                    alt="Kiyotaka_Ayanokoji"
+                    width="60"
+                    class="shrink-0"
+                  />
+                </button>
+                <button
+                  type="button"
+                  class="avatar-option border-4 rounded-full p-0.5 shrink-0  rounded-b-full border-[#E7D8BD]"
+                  data-avatar="Shinichi_Akiyama"
+                >
+                  <img
+                    src="./images/avatars/Shinichi_Akiyama.png"
+                    alt="Shinichi_Akiyama"
+                    width="60"
+                    class="shrink-0"
+                  />
+                </button>
+                <button
+                  type="button"
+                  class="avatar-option border-4 rounded-full p-0.5 shrink-0 border-[#E7D8BD]"
+                  data-avatar="Roronoa_Zoro"
+                >
+                  <img
+                    src="./images/avatars/Roronoa_Zoro.png"
+                    alt="Roronoa_Zoro"
+                    width="60"
+                    class="shrink-0"
+                  />
+                </button>
+                <button type="button" class="avatar-option border-4 rounded-full p-0.5 shrink-0  rounded-b-full border-[#E7D8BD]" data-avatar="Sora">
+                  <img
+                    src="./images/avatars/Sora.png"
+                    alt="Sora"
+                    width="60"
+                    class="shrink-0"
+                  />
+                </button>
+
+                <button
+                  type="button"
+                  class="avatar-option border-4 rounded-full p-0.5 shrink-0  rounded-b-full border-[#E7D8BD]"
+                  data-avatar="Yumeko_Jabami"
+                >
+                  <img
+                    src="./images/avatars/Yumeko_Jabami.png"
+                    alt="Yumeko_Jabami"
+                    width="60"
+                    class="shrink-0"
+                  />
+                </button>
+              </div>
+            </div>
+            <input
+              type="hidden"
+              id="selectedAvatar"
+              name="avatar"
+              value="Baku_Madarame"
+            />
+            <div class="flex justify-center">
+              <button
+                type="submit"
+                class="text-white md:text-xl font-bold bg-[#751f16] w-72 h-10 md:h-12 rounded-lg"
+              >
+                Ajouter
+              </button>
+            </div>
+          </div>
+        </form>
+        <div id="playersContainer" class="flex md:justify-between mx-7 gap-3 md:flex-row flex-col">
+          <div class="bg-white rounded-lg p-3 border-2 border-[#E7D8BD] flex-1">
+            <div class="flex justify-between items-center">
+              <div class="flex gap-4 items-center justify-between">
+                <div>
+                  <img
+                    src="./images/avatars/Baku_Madarame.png"
+                    alt="Baku_Madarame"
+                    width="68"
+                  />
+                </div>
+                <div>
+                  <p class="font-bold text-lg">Yanis_07</p>
+                  <p class="text-sm">0 partie</p>
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-[#751f16] font-semibold bg-[#FEEABC] w-20 h-6 flex items-center justify-center rounded-sm text-xs"
+                >
+                  Sélectionné
+                </p>
+              </div>
+            </div>
+            <hr class="my-4 border-[#E7D8BD]" />
+            <div class="flex gap-3 text-[#751f16] font-bold">
+              <div class="flex border-r-2 border-[#751f16]">
+                <img src="./images/avatars/pencil.png" alt="" width="24" />
+                <p class="mx-5">Modifier</p>
+              </div>
+
+              <div class="flex gap-3 ml-3">
+                <img src="./images/avatars/trash.png" alt="" width="24" />
+                <p class="mx-3">Supprimer</p>
+              </div>
+            </div>
+          </div>
+          <div  class="bg-white rounded-lg p-3 border-2 border-[#E7D8BD] flex-1">
+            <div class="flex justify-between items-center">
+              <div class="flex gap-4 items-center">
+                <div>
+                  <img
+                    src="./images/avatars/Yumeko_Jabami.png"
+                    alt="Yumeko_Jabami"
+                    width="68"
+                  />
+                </div>
+                <div>
+                  <p class="font-bold text-lg">Sara</p>
+                  <p class="text-sm">0 partie</p>
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-white font-semibold text-md bg-[#751f16] w-24 h-9 flex items-center justify-center rounded-md"
+                >
+                  Choisir
+                </p>
+              </div>
+            </div>
+            <hr class="border-[#E7D8BD] my-4" />
+            <div class="flex gap-3 text-[#751f16] font-bold">
+              <div class="flex border-r-2 border-[#751f16]">
+                <img src="./images/avatars/pencil.png" alt="" width="24" />
+                <p class="mx-5">Modifier</p>
+              </div>
+
+              <div class="flex gap-3 ml-3">
+                <img src="./images/avatars/trash.png" alt="" width="24" />
+                <p class="mx-3">Supprimer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="md:flex md:justify-center">
+          <div
+            class="bg-white my-3 rounded-2xl border-2 border-[#E7D8BD] p-2 flex-1 mx-7"
+          >
+            <div class="flex gap-4 items-center">
+              <div class="flex gap-2 md:gap-4 mx-auto">
+                <p class="text-md md:text-lg font-semibold mb-4">
+                  joueur actif :
+                </p>
+                <p
+                  class="font-bold text-xl md:text-2xl relative -top-[3px] mb-4"
+                >
+                  Sara
+                </p>
+              </div>
+            </div>
+
+            <div class="flex justify-center gap-3">
+              <button
+                class="bg-[#751f16] text-white w-72 h-10 rounded-lg md:text-xl"
+              >
+                Commencer une partie
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer
+      class="flex mx-auto md:text-xl r gap-1 text-xs mb-2 font-light text-[#757573]"
+    >
+      <p>Projet scolaire</p>
+      <p >·</p>
+      <p>Brief 2</p>
+    </footer>
+
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>
